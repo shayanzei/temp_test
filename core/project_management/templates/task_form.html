@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Task Form{% endblock %}</title>
+</head>
+<body>
+    <h1>{% block heading %}Task Form{% endblock %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'project_detail' project_id=project_id %}">Cancel</a>
+</body>
+</html>

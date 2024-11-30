@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Confirm Delete{% endblock %}</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete this {{ object }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url success_url_name %}">Cancel</a>
+</body>
+</html>

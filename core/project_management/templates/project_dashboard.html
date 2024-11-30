@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects Dashboard</title>
+</head>
+<body>
+    <h1>Projects Dashboard</h1>
+    <a href="{% url 'create_project' %}">Create New Project</a>
+    <ul>
+        {% for project in projects %}
+        <li>
+            <a href="{% url 'project_detail' project_id=project.id %}">{{ project.name }}</a>
+            (<a href="{% url 'update_project' project_id=project.id %}">Edit</a> |
+            <a href="{% url 'delete_project' project_id=project.id %}">Delete</a>)
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
